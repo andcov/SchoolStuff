@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1579331801 source:d:\a\andrei covaci\acsl_2018-2019\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

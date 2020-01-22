@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1571820632 source:d:\a\andrei covaci\pbinfo2\main.cpp
+	<iostream>
+	<fstream>
+

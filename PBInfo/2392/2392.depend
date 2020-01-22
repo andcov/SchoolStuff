@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1573633118 source:d:\a\andrei covaci\2392\main.cpp
+	<iostream>
+	<fstream>
+
+1572429587 source:d:\a\andrei covaci\2392\src\adf.cpp
+	"adf.h"
+
+1572429586 d:\a\andrei covaci\2392\include\adf.h
+
