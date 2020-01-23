@@ -5,6 +5,7 @@ using namespace std;
 
 char a[80], b[80], aux[80], e[] = "AEIOU";
 char c1[80], c2[80], c3[80], c4[80], c5[80];
+char rezultate[5][80];
 
 int main()
 {
@@ -12,15 +13,11 @@ int main()
 
         cin >> a >> b;
 
+        //------------------------------------------------------
+        // deleting double consonants
+
         for(int i = 0; i < strlen(a) - 1; i++){
             while(a[i] == a[i + 1] && i < strlen(a) - 1){
-                strcpy(aux, a + i + 1);
-                strcpy(a + i, aux);
-            }
-        }
-
-        for(int i = 1; i < strlen(a); i++){
-            while(strchr(e, a[i]) != 0 && i < strlen(a)){
                 strcpy(aux, a + i + 1);
                 strcpy(a + i, aux);
             }
@@ -33,6 +30,16 @@ int main()
             }
         }
 
+        //------------------------------------------------------
+        // deleting vowels
+
+        for(int i = 1; i < strlen(a); i++){
+            while(strchr(e, a[i]) != 0 && i < strlen(a)){
+                strcpy(aux, a + i + 1);
+                strcpy(a + i, aux);
+            }
+        }
+
         for(int i = 1; i < strlen(b); i++){
             while(strchr(e, b[i]) != 0 && i < strlen(b)){
                 strcpy(aux, b + i + 1);
@@ -41,6 +48,7 @@ int main()
         }
 
         //------------------------------------------------------
+        // deleting characters from left to right
 
         for(int i = 0; i < strlen(a) && strlen(b); i++){
             while(a[i] == b[i] && i < strlen(a) && strlen(b)){
@@ -53,87 +61,40 @@ int main()
         }
 
         //-------------------------------------------------------
+        // deleting characters from right to left
 
-        for(int i = 0; i < strlen(a) / 2; i++){
-            char aux = a[i];
-            a[i] = a[strlen(a) - i - 1];
-            a[strlen(a) - i - 1] = aux;
-        }
+        int i = strlen(a), j = strlen(b);
 
-        for(int i = 0; i < strlen(b) / 2; i++){
-            char aux = b[i];
-            b[i] = b[strlen(b) - i - 1];
-            b[strlen(b) - i - 1] = aux;
-        }
-
-        for(int i = 0; i < strlen(a) && strlen(b); i++){
-            while(a[i] == b[i] && i < strlen(a) && strlen(b)){
+        while(i >= 0 && j >= 0){
+            if(a[i] == b[j]){
                 strcpy(aux, a + i + 1);
                 strcpy(a + i, aux);
 
-                strcpy(aux, b + i + 1);
-                strcpy(b + i, aux);
+                strcpy(aux, b + j + 1);
+                strcpy(b + j, aux);
             }
+            i--;
+            j--;
         }
 
-        for(int i = 0; i < strlen(a) / 2; i++){
-            char aux = a[i];
-            a[i] = a[strlen(a) - i - 1];
-            a[strlen(a) - i - 1] = aux;
-        }
-
-        for(int i = 0; i < strlen(b) / 2; i++){
-            char aux = b[i];
-            b[i] = b[strlen(b) - i - 1];
-            b[strlen(b) - i - 1] = aux;
-        }
+        //-------------------------------------------------------
+        // storing resulting strings
 
         if(strlen(a) > strlen(b)){
-            switch(o){
-            case 0:
-                strcpy(c1, b);
-                break;
-            case 1:
-                strcpy(c2, b);
-                break;
-            case 2:
-                strcpy(c3, b);
-                break;
-            case 3:
-                strcpy(c4, b);
-                break;
-            case 4:
-                strcpy(c5, b);
-                break;
-            }
+            strcpy(rezultate[o], b);
         }else if(strlen(a) < strlen(b)){
-            switch(o){
-            case 0:
-                strcpy(c1, a);
-                break;
-            case 1:
-                strcpy(c2, a);
-                break;
-            case 2:
-                strcpy(c3, a);
-                break;
-            case 3:
-                strcpy(c4, a);
-                break;
-            case 4:
-                strcpy(c5, a);
-                break;
-            }
+            strcpy(rezultate[o], a);
         }else {
+            if(strcmp(a, b) > 0){
+                strcpy(rezultate[o], b);
+            }else{
+                strcpy(rezultate[o], a);
+            }
         }
-        //cout << a << " " << b;
-        // mississippi missouri
-        // catherine katheryne
-        // constitutional conventional
-        // physician pharmacy
-        // compartmentalization semiautobiographical
     }
 
-    cout << c1 << "\n" << c2 << "\n" << c3 << "\n" << c4 << "\n" << c5;
+    for(int o = 0; o < 5; o++){
+        cout << rezultate[o] << "\n";
+    }
     return 0;
 }

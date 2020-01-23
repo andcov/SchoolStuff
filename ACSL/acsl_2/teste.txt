@@ -1,0 +1,84 @@
+MISSISSIPPI MISSOURI
+CATHERINE KATHERYNE
+CONSTITUTIONAL CONVENTIONAL
+COMPARTMENTALIZATION SEMIAUTOBIOGRAPHICAL
+PHYSICIAN PHARMACY
+ABD BCBCBCBCBCBCBCBCBCBCBCBCBCBC
+
+FEEFIFOFUM FIDDLEDEEDEE
+MYLOLLIPOPS MYLARBALLONS
+CONNECTICUTCT CONSTITUTIONSTATE
+MASSACHUSETTSBAYCOLONY MINUTEMANNATIONALHISTORICALPARK
+AMERICANCOMPUTERSCIENCELEAGUE NATIONALACADEMICGAMESLEAGUE
+
+/*for(int i = 0; i < strlen(a) / 2; i++){
+            char aux = a[i];
+            a[i] = a[strlen(a) - i - 1];
+            a[strlen(a) - i - 1] = aux;
+        }
+
+        for(int i = 0; i < strlen(b) / 2; i++){
+            char aux = b[i];
+            b[i] = b[strlen(b) - i - 1];
+            b[strlen(b) - i - 1] = aux;
+        }
+
+        for(int i = 0; i < strlen(a) && strlen(b); i++){
+            while(a[i] == b[i] && i < strlen(a) && strlen(b)){
+                strcpy(aux, a + i + 1);
+                strcpy(a + i, aux);
+
+                strcpy(aux, b + i + 1);
+                strcpy(b + i, aux);
+            }
+        }
+
+        for(int i = 0; i < strlen(a) / 2; i++){
+            char aux = a[i];
+            a[i] = a[strlen(a) - i - 1];
+            a[strlen(a) - i - 1] = aux;
+        }
+
+        for(int i = 0; i < strlen(b) / 2; i++){
+            char aux = b[i];
+            b[i] = b[strlen(b) - i - 1];
+            b[strlen(b) - i - 1] = aux;
+        }*/
+		
+		
+		
+		        switch(o){
+            case 0:
+                strcpy(c1, b);
+                break;
+            case 1:
+                strcpy(c2, b);
+                break;
+            case 2:
+                strcpy(c3, b);
+                break;
+            case 3:
+                strcpy(c4, b);
+                break;
+            case 4:
+                strcpy(c5, b);
+                break;
+            }
+        }else if(strlen(a) < strlen(b)){
+            strcpy(ioioio[o], a);
+            switch(o){
+            case 0:
+                strcpy(c1, a);
+                break;
+            case 1:
+                strcpy(c2, a);
+                break;
+            case 2:
+                strcpy(c3, a);
+                break;
+            case 3:
+                strcpy(c4, a);
+                break;
+            case 4:
+                strcpy(c5, a);
+              
